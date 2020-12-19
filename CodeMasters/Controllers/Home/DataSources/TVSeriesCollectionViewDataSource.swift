@@ -21,7 +21,11 @@ class TVSeriesCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TVSeriesCell.reuseId, for: indexPath) as! TVSeriesCell
-        cell.configureData(tvSeries: tvSeriesList[indexPath.item])
+        
+        let tvSeries = tvSeriesList[indexPath.item]
+        cell.identifier = tvSeries.imagePath
+        cell.configureData(tvSeries: tvSeries)
+        
         return cell
     }
 }

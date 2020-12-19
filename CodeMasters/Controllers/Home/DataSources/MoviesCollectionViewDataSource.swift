@@ -21,7 +21,11 @@ class MoviesCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.reuseId, for: indexPath) as! MovieCell
-        cell.configureData(movie: movies[indexPath.item])
+        
+        let movie = movies[indexPath.item]
+        cell.identifier = movie.imagePath
+        cell.configureData(movie: movie)
+        
         return cell
     }
 }

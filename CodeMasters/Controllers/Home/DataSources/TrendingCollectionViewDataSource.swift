@@ -21,7 +21,15 @@ class TrendingCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.reuseId, for: indexPath) as! TrendingCell
-        cell.configureData(trending: trendingList[indexPath.item])
+        
+        let trending = trendingList[indexPath.item]
+        if let movie = trending as? Movie {
+            cell.identifier = movie.imagePath
+        } else if let tvSeries = trending as? TVSeries {
+            cell.identifier = tvSeries.imagePath
+        }
+        cell.configureData(trending: trending)
+        
         return cell
     }
 }

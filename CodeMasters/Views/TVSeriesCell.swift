@@ -10,6 +10,8 @@ import UIKit
 class TVSeriesCell: UICollectionViewCell {
     
     static let reuseId = String(describing: TVSeriesCell.self)
+    
+    var identifier: String!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +25,13 @@ class TVSeriesCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        titleLabel.text = ""
+        releaseYearLabel.text = ""
+        ratingLabel.text = ""
+        imageView.image = nil
+    }
+    
     func configureData(tvSeries: TVSeries) {
         titleLabel.text = tvSeries.name
         releaseYearLabel.text = "Released: \(tvSeries.firstAirDate)"
@@ -31,7 +40,10 @@ class TVSeriesCell: UICollectionViewCell {
         downloadImage(filePath: tvSeries.imagePath) { [weak self] (image) in
             guard let image = image else { return }
             DispatchQueue.main.async {
-                self?.imageView.image = image
+                if self?.identifier == tvSeries.imagePath {
+                    // make sure we are using correct image for the cell
+                    self?.imageView.image = image
+                }
             }
         }
     }

@@ -10,6 +10,8 @@ import UIKit
 class MovieCell: UICollectionViewCell {
     
     static let reuseId = String(describing: MovieCell.self)
+    
+    var identifier: String!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +25,13 @@ class MovieCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        titleLabel.text = ""
+        releaseYearLabel.text = ""
+        ratingLabel.text = ""
+        imageView.image = nil
+    }
+    
     func configureData(movie: Movie) {
         titleLabel.text = movie.title
         releaseYearLabel.text = "Released: \(movie.releaseDate)"
@@ -31,7 +40,10 @@ class MovieCell: UICollectionViewCell {
         downloadImage(filePath: movie.imagePath) { [weak self] (image) in
             guard let image = image else { return }
             DispatchQueue.main.async {
-                self?.imageView.image = image
+                if self?.identifier == movie.imagePath {
+                    // make sure we are using correct image for the cell
+                    self?.imageView.image = image
+                }
             }
         }
     }
