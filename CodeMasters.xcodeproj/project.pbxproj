@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24B97180258E298600AA4C46 /* CodeMastersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9717F258E298600AA4C46 /* CodeMastersTests.swift */; };
 		24FA45C3258DBB7D00F4CA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA45C2258DBB7D00F4CA1E /* AppDelegate.swift */; };
 		24FA45CC258DBB8600F4CA1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FA45CB258DBB8600F4CA1E /* Assets.xcassets */; };
 		24FA45CF258DBB8600F4CA1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FA45CD258DBB8600F4CA1E /* LaunchScreen.storyboard */; };
@@ -28,7 +29,20 @@
 		24FA461E258E22D600F4CA1E /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA461D258E22D600F4CA1E /* DetailController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		24B97182258E298600AA4C46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24FA45B7258DBB7C00F4CA1E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24FA45BE258DBB7C00F4CA1E;
+			remoteInfo = CodeMasters;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		24B9717D258E298600AA4C46 /* CodeMastersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeMastersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		24B9717F258E298600AA4C46 /* CodeMastersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeMastersTests.swift; sourceTree = "<group>"; };
+		24B97181258E298600AA4C46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24FA45BF258DBB7D00F4CA1E /* CodeMasters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeMasters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FA45C2258DBB7D00F4CA1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24FA45CB258DBB8600F4CA1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +67,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		24B9717A258E298600AA4C46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24FA45BC258DBB7C00F4CA1E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,10 +84,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24B9717E258E298600AA4C46 /* CodeMastersTests */ = {
+			isa = PBXGroup;
+			children = (
+				24B9717F258E298600AA4C46 /* CodeMastersTests.swift */,
+				24B97181258E298600AA4C46 /* Info.plist */,
+			);
+			path = CodeMastersTests;
+			sourceTree = "<group>";
+		};
 		24FA45B6258DBB7C00F4CA1E = {
 			isa = PBXGroup;
 			children = (
 				24FA45C1258DBB7D00F4CA1E /* CodeMasters */,
+				24B9717E258E298600AA4C46 /* CodeMastersTests */,
 				24FA45C0258DBB7D00F4CA1E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				24FA45BF258DBB7D00F4CA1E /* CodeMasters.app */,
+				24B9717D258E298600AA4C46 /* CodeMastersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +189,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		24B9717C258E298600AA4C46 /* CodeMastersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24B97186258E298600AA4C46 /* Build configuration list for PBXNativeTarget "CodeMastersTests" */;
+			buildPhases = (
+				24B97179258E298600AA4C46 /* Sources */,
+				24B9717A258E298600AA4C46 /* Frameworks */,
+				24B9717B258E298600AA4C46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				24B97183258E298600AA4C46 /* PBXTargetDependency */,
+			);
+			name = CodeMastersTests;
+			productName = CodeMastersTests;
+			productReference = 24B9717D258E298600AA4C46 /* CodeMastersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		24FA45BE258DBB7C00F4CA1E /* CodeMasters */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24FA45D3258DBB8600F4CA1E /* Build configuration list for PBXNativeTarget "CodeMasters" */;
@@ -183,6 +233,10 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					24B9717C258E298600AA4C46 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 24FA45BE258DBB7C00F4CA1E;
+					};
 					24FA45BE258DBB7C00F4CA1E = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -202,11 +256,19 @@
 			projectRoot = "";
 			targets = (
 				24FA45BE258DBB7C00F4CA1E /* CodeMasters */,
+				24B9717C258E298600AA4C46 /* CodeMastersTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		24B9717B258E298600AA4C46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24FA45BD258DBB7C00F4CA1E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +281,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		24B97179258E298600AA4C46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24B97180258E298600AA4C46 /* CodeMastersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24FA45BB258DBB7C00F4CA1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +315,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		24B97183258E298600AA4C46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24FA45BE258DBB7C00F4CA1E /* CodeMasters */;
+			targetProxy = 24B97182258E298600AA4C46 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		24FA45CD258DBB8600F4CA1E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -257,6 +335,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		24B97184258E298600AA4C46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PYG64528E;
+				INFOPLIST_FILE = CodeMastersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.CodeMastersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeMasters.app/CodeMasters";
+			};
+			name = Debug;
+		};
+		24B97185258E298600AA4C46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9PYG64528E;
+				INFOPLIST_FILE = CodeMastersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atikur.CodeMastersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeMasters.app/CodeMasters";
+			};
+			name = Release;
+		};
 		24FA45D1258DBB8600F4CA1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -416,6 +534,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		24B97186258E298600AA4C46 /* Build configuration list for PBXNativeTarget "CodeMastersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24B97184258E298600AA4C46 /* Debug */,
+				24B97185258E298600AA4C46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		24FA45BA258DBB7C00F4CA1E /* Build configuration list for PBXProject "CodeMasters" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

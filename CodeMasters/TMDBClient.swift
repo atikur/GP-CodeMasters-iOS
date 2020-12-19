@@ -103,7 +103,7 @@ class TMDBClient : NSObject {
         dataTask.resume()
     }
     
-    private func getURL(for method: String) -> URL? {
+    func getURL(for method: String) -> URL? {
         var components = URLComponents()
         components.scheme = TMDBClient.Constants.ApiScheme
         components.host = TMDBClient.Constants.ApiHost
