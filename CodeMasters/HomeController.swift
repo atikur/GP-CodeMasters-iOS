@@ -19,11 +19,19 @@ class HomeController: UIViewController {
         
         TMDBClient.shared.getPopularMovies { [weak self]
             movies in
-            print(movies)
             guard let movies = movies else { return }
             self?.moviesDataSource.movies = movies
             DispatchQueue.main.async {
                 self?.moviesCollectionView.reloadData()
+            }
+        }
+        
+        TMDBClient.shared.getPopularTVSeries { [weak self]
+            tvSeriesList in
+            guard let tvSeriesList = tvSeriesList else { return }
+            self?.tvSeriesDataSource.tvSeriesList = tvSeriesList
+            DispatchQueue.main.async {
+                self?.tvSeriesCollectionView.reloadData()
             }
         }
     }
@@ -64,11 +72,14 @@ class HomeController: UIViewController {
     
     // MARK: - TV Series section
     
+    let tvSeriesDataSource = TVSeriesCollectionViewDataSource()
+    let tvSeriesDelegate = TVSeriesCollectionViewDelegate()
+    
     private func addTVSeriesSection() {
-        tvSeriesCollectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.reuseId)
+        tvSeriesCollectionView.register(TVSeriesCell.self, forCellWithReuseIdentifier: TVSeriesCell.reuseId)
         
-        tvSeriesCollectionView.dataSource = moviesDataSource
-        tvSeriesCollectionView.delegate = moviesDelegate
+        tvSeriesCollectionView.dataSource = tvSeriesDataSource
+        tvSeriesCollectionView.delegate = tvSeriesDelegate
         
         view.addSubview(tvSeriesLabel)
         view.addSubview(tvSeriesCollectionView)

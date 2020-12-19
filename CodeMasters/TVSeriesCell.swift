@@ -1,5 +1,5 @@
 //
-//  MovieCell.swift
+//  TVSeriesCell.swift
 //  CodeMasters
 //
 //  Created by Atikur Rahman on 19/12/20.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MovieCell: UICollectionViewCell {
+class TVSeriesCell: UICollectionViewCell {
     
-    static let reuseId = String(describing: MovieCell.self)
+    static let reuseId = String(describing: TVSeriesCell.self)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,12 +23,12 @@ class MovieCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureData(movie: Movie) {
-        titleLabel.text = movie.title
-        releaseYearLabel.text = "Released: \(movie.releaseDate)"
-        ratingLabel.text = "Rating: \(movie.rating)"
+    func configureData(tvSeries: TVSeries) {
+        titleLabel.text = tvSeries.name
+        releaseYearLabel.text = "Released: \(tvSeries.firstAirDate)"
+        ratingLabel.text = "Rating: \(tvSeries.rating)"
         
-        downloadImage(filePath: movie.imagePath) { [weak self] (image) in
+        downloadImage(filePath: tvSeries.imagePath) { [weak self] (image) in
             guard let image = image else { return }
             DispatchQueue.main.async {
                 self?.imageView.image = image

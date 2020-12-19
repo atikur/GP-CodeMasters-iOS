@@ -31,6 +31,28 @@ class TMDBClient : NSObject {
         }
     }
     
+    func getPopularTVSeries(completion: @escaping ([TVSeries]?) -> ()) {
+        guard let url = getURL(for: TMDBClient.Methods.PopularTVSeries) else { return }
+        
+        performGetRequest(url: url) { (data) in
+            var parsedResult: AnyObject!
+            do {
+                parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+                
+                guard let results = parsedResult["results"] as? [[String: Any]] else {
+                    completion(nil)
+                    return
+                }
+                
+                let tvSeries = results.compactMap {TVSeries(dict: $0)}
+                completion(tvSeries)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
     func performGetRequest(url: URL, completionHandler: @escaping (Data) -> ()) {
         let defaultSession = URLSession(configuration: .default)
         let dataTask =

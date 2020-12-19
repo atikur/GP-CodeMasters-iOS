@@ -22,6 +22,8 @@ extension TMDBClient {
     
     struct JSONResponseKeys {
         static let Title = "title"
+        static let Name = "name"
+        static let FirstAirDate = "first_air_date"
         static let ReleaseDate = "release_date"
         static let Rating = "vote_average"
         static let ImagePath = "poster_path"
