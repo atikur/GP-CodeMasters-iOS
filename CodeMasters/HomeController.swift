@@ -22,24 +22,32 @@ class HomeController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .white
+        navigationItem.title = "GP Codemasters"
         
-        addMoviesCollectionView()
+        addMoviesSection()
     }
-    
-    private func addMoviesCollectionView() {
+        
+    private func addMoviesSection() {
         moviesCollectionView.register(MovieCell.self, forCellWithReuseIdentifier: MovieCell.reuseId)
         
         moviesCollectionView.dataSource = moviesDataSource
         moviesCollectionView.delegate = moviesDelegate
         
+        view.addSubview(moviesLabel)
         view.addSubview(moviesCollectionView)
-        moviesCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        
+        moviesLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12).isActive = true
+        moviesLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        moviesCollectionView.topAnchor.constraint(equalTo: moviesLabel.bottomAnchor, constant: 20).isActive = true
         moviesCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         moviesCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         moviesCollectionView.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
     
-    let moviesCollectionView: UICollectionView = {
+    private let moviesLabel = UILabel.setupLabel(text: "Popular Movies")
+    
+    private let moviesCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         
@@ -48,4 +56,15 @@ class HomeController: UIViewController {
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
+}
+
+extension UILabel {
+    
+    static func setupLabel(text: String) -> UILabel {
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }
 }
