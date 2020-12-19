@@ -78,7 +78,7 @@ class HomeController: UIViewController {
         moviesLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12).isActive = true
         moviesLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        moviesCollectionView.topAnchor.constraint(equalTo: moviesLabel.bottomAnchor, constant: 20).isActive = true
+        moviesCollectionView.topAnchor.constraint(equalTo: moviesLabel.bottomAnchor, constant: 10).isActive = true
         moviesCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         moviesCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         moviesCollectionView.heightAnchor.constraint(equalToConstant: 150).isActive = true
@@ -108,10 +108,10 @@ class HomeController: UIViewController {
         view.addSubview(tvSeriesCollectionView)
         view.addSubview(tvSeriesLoadingIndicator)
         
-        tvSeriesLabel.topAnchor.constraint(equalTo: moviesCollectionView.bottomAnchor, constant: 20).isActive = true
+        tvSeriesLabel.topAnchor.constraint(equalTo: moviesCollectionView.bottomAnchor, constant: 12).isActive = true
         tvSeriesLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        tvSeriesCollectionView.topAnchor.constraint(equalTo: tvSeriesLabel.bottomAnchor, constant: 20).isActive = true
+        tvSeriesCollectionView.topAnchor.constraint(equalTo: tvSeriesLabel.bottomAnchor, constant: 10).isActive = true
         tvSeriesCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         tvSeriesCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         tvSeriesCollectionView.heightAnchor.constraint(equalToConstant: 150).isActive = true
@@ -141,10 +141,10 @@ class HomeController: UIViewController {
         view.addSubview(trendingContentCollectionView)
         view.addSubview(trendingLoadingIndicator)
         
-        trendingContentLabel.topAnchor.constraint(equalTo: tvSeriesCollectionView.bottomAnchor, constant: 20).isActive = true
+        trendingContentLabel.topAnchor.constraint(equalTo: tvSeriesCollectionView.bottomAnchor, constant: 12).isActive = true
         trendingContentLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        trendingContentCollectionView.topAnchor.constraint(equalTo: trendingContentLabel.bottomAnchor, constant: 20).isActive = true
+        trendingContentCollectionView.topAnchor.constraint(equalTo: trendingContentLabel.bottomAnchor, constant: 10).isActive = true
         trendingContentCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         trendingContentCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         trendingContentCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
