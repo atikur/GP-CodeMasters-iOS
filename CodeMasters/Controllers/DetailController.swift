@@ -16,7 +16,21 @@ class DetailController: UIViewController {
         
         setupViews()
         configureData()
+        
+        favoriteButton.addTarget(self, action: #selector(handleFavorite), for: .touchUpInside)
     }
+    
+    // MARK: - Actions
+    
+    @objc private func handleFavorite() {
+        if favoriteButton.titleLabel?.text == "Add to Favorites" {
+            favoriteButton.setTitle("Remove from Favorites", for: .normal)
+        } else {
+            favoriteButton.setTitle("Add to Favorites", for: .normal)
+        }
+    }
+    
+    // MARK: - Helpers
     
     func configureData() {
         var movie: Movie?
@@ -54,6 +68,8 @@ class DetailController: UIViewController {
         }
     }
     
+    // MARK: - Configure UI
+    
     private func setupViews() {
         view.backgroundColor = .white
         
@@ -70,7 +86,7 @@ class DetailController: UIViewController {
         imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
         
         let infoStackView = UIStackView(arrangedSubviews: [
-            titleLabel, releaseYearLabel, ratingLabel
+            titleLabel, releaseYearLabel, ratingLabel, favoriteButton
         ])
         infoStackView.translatesAutoresizingMaskIntoConstraints = false
         infoStackView.spacing = 0
@@ -94,5 +110,12 @@ class DetailController: UIViewController {
         iv.contentMode = .scaleAspectFill
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
+    }()
+    
+    private let favoriteButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("Add to Favorites", for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
     }()
 }
