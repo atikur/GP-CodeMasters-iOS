@@ -2,7 +2,7 @@
 
 ### Technologies used
 - Language: Swift
-- Min Deployment Target: iOS 11
+- Minimum Deployment Target: iOS 11
 - Xcode Version: 12.2
 
 ### How to Run
