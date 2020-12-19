@@ -54,7 +54,7 @@ class TMDBClient : NSObject {
     }
     
     func getTrendingContents(completion: @escaping ([Any]?) -> ()) {
-        guard let url = getURL(for: TMDBClient.Methods.PopularTVSeries) else { return }
+        guard let url = getURL(for: TMDBClient.Methods.Trending) else { return }
         
         performGetRequest(url: url) { (data) in
             var parsedResult: AnyObject!
