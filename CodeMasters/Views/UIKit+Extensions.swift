@@ -30,3 +30,12 @@ extension UICollectionView {
         return cv
     }
 }
+
+extension UIActivityIndicatorView {
+    
+    static func setupActivityIndicator() -> UIActivityIndicatorView {
+        let av = UIActivityIndicatorView(style: .gray)
+        av.translatesAutoresizingMaskIntoConstraints = false
+        return av
+    }
+}
