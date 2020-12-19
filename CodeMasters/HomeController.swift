@@ -19,6 +19,7 @@ class HomeController: UIViewController {
         
         TMDBClient.shared.getPopularMovies { [weak self]
             movies in
+            print(movies)
             guard let movies = movies else { return }
             self?.moviesDataSource.movies = movies
             DispatchQueue.main.async {

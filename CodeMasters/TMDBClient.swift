@@ -5,12 +5,14 @@
 //  Created by Atikur Rahman on 19/12/20.
 //
 
-import Foundation
+import UIKit
 
 class TMDBClient : NSObject {
     
     func getPopularMovies(completion: @escaping ([Movie]?) -> ()) {
-        performGetRequest(method: TMDBClient.Methods.PopularMovie) { (data) in
+        guard let url = getURL(for: TMDBClient.Methods.PopularMovie) else { return }
+        
+        performGetRequest(url: url) { (data) in
             var parsedResult: AnyObject!
             do {
                 parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
@@ -29,9 +31,7 @@ class TMDBClient : NSObject {
         }
     }
     
-    private func performGetRequest(method: String, completionHandler: @escaping (Data) -> ()) {
-        guard let url = getURL(for: method) else { return }
-        
+    func performGetRequest(url: URL, completionHandler: @escaping (Data) -> ()) {
         let defaultSession = URLSession(configuration: .default)
         let dataTask =
             defaultSession.dataTask(with: url) { data, response, error in
