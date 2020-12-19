@@ -53,6 +53,36 @@ class TMDBClient : NSObject {
         }
     }
     
+    func getTrendingContents(completion: @escaping ([Any]?) -> ()) {
+        guard let url = getURL(for: TMDBClient.Methods.PopularTVSeries) else { return }
+        
+        performGetRequest(url: url) { (data) in
+            var parsedResult: AnyObject!
+            do {
+                parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject
+                
+                guard let results = parsedResult["results"] as? [[String: Any]] else {
+                    completion(nil)
+                    return
+                }
+                
+                var contents = [Any]()
+                results.forEach { dict in
+                    if let movie = Movie(dict: dict) {
+                        contents.append(movie)
+                    } else if let tvSeries = TVSeries(dict: dict) {
+                        contents.append(tvSeries)
+                    }
+                }
+                
+                completion(contents)
+            } catch {
+                print(error)
+                completion(nil)
+            }
+        }
+    }
+    
     func performGetRequest(url: URL, completionHandler: @escaping (Data) -> ()) {
         let defaultSession = URLSession(configuration: .default)
         let dataTask =

@@ -34,6 +34,15 @@ class HomeController: UIViewController {
                 self?.tvSeriesCollectionView.reloadData()
             }
         }
+        
+        TMDBClient.shared.getTrendingContents { [weak self]
+            trendingList in
+            guard let trendingList = trendingList else { return }
+            self?.trendingDataSource.trendingList = trendingList
+            DispatchQueue.main.async {
+                self?.trendingContentCollectionView.reloadData()
+            }
+        }
     }
     
     // MARK: - Configure UI
