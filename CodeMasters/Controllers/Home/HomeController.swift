@@ -90,6 +90,7 @@ class HomeController: UIViewController {
         
         tvSeriesCollectionView.dataSource = tvSeriesDataSource
         tvSeriesCollectionView.delegate = tvSeriesDelegate
+        tvSeriesDelegate.controller = self
         
         view.addSubview(tvSeriesLabel)
         view.addSubview(tvSeriesCollectionView)
@@ -116,6 +117,7 @@ class HomeController: UIViewController {
         
         trendingContentCollectionView.dataSource = trendingDataSource
         trendingContentCollectionView.delegate = trendingDelegate
+        trendingDelegate.controller = self
         
         view.addSubview(trendingContentLabel)
         view.addSubview(trendingContentCollectionView)
