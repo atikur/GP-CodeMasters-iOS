@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24B97180258E298600AA4C46 /* CodeMastersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B9717F258E298600AA4C46 /* CodeMastersTests.swift */; };
+		24B9718A258E3A9800AA4C46 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B97189258E3A9800AA4C46 /* ImageCache.swift */; };
 		24FA45C3258DBB7D00F4CA1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA45C2258DBB7D00F4CA1E /* AppDelegate.swift */; };
 		24FA45CC258DBB8600F4CA1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24FA45CB258DBB8600F4CA1E /* Assets.xcassets */; };
 		24FA45CF258DBB8600F4CA1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24FA45CD258DBB8600F4CA1E /* LaunchScreen.storyboard */; };
@@ -43,6 +44,7 @@
 		24B9717D258E298600AA4C46 /* CodeMastersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeMastersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B9717F258E298600AA4C46 /* CodeMastersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeMastersTests.swift; sourceTree = "<group>"; };
 		24B97181258E298600AA4C46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24B97189258E3A9800AA4C46 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		24FA45BF258DBB7D00F4CA1E /* CodeMasters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeMasters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FA45C2258DBB7D00F4CA1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24FA45CB258DBB8600F4CA1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				24FA4610258E216200F4CA1E /* Views */,
 				24FA4613258E218C00F4CA1E /* Controllers */,
 				24FA45F7258DE2C100F4CA1E /* TMDBClient.swift */,
+				24B97189258E3A9800AA4C46 /* ImageCache.swift */,
 				24FA45FE258E067500F4CA1E /* Constants.swift */,
 				24FA45CB258DBB8600F4CA1E /* Assets.xcassets */,
 				24FA45CD258DBB8600F4CA1E /* LaunchScreen.storyboard */,
@@ -305,6 +308,7 @@
 				24FA45DC258DBE9E00F4CA1E /* HomeController.swift in Sources */,
 				24FA45EE258DD7C000F4CA1E /* TrendingCollectionViewDelegate.swift in Sources */,
 				24FA45DF258DC04F00F4CA1E /* MoviesCollectionViewDelegate.swift in Sources */,
+				24B9718A258E3A9800AA4C46 /* ImageCache.swift in Sources */,
 				24FA45E5258DC0B500F4CA1E /* MovieCell.swift in Sources */,
 				24FA45C3258DBB7D00F4CA1E /* AppDelegate.swift in Sources */,
 				24FA45F1258DD7F700F4CA1E /* TrendingCollectionViewDataSource.swift in Sources */,

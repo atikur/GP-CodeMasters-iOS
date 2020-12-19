@@ -30,19 +30,3 @@ extension UICollectionView {
         return cv
     }
 }
-
-extension UIImageView {
-    func loadImage(filePath: String, identifier: String) {
-        let urlStr = "https://image.tmdb.org/t/p/w200/\(filePath)"
-        guard let url = URL(string: urlStr) else { return }
-        
-        TMDBClient.shared.performGetRequest(url: url) { [weak self] (data) in
-            DispatchQueue.main.async {
-                // make sure we are using correct image for the cell
-                if filePath == identifier {
-                    self?.image = UIImage(data: data)
-                }
-            }
-        }
-    }
-}
