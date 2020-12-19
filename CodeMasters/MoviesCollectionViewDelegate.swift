@@ -11,7 +11,7 @@ class MoviesCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLayout
         
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemHeight = collectionView.frame.height
-        return CGSize(width: itemHeight, height: itemHeight)
+        return CGSize(width: itemHeight*1.5, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
