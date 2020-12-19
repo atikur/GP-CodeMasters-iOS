@@ -63,6 +63,7 @@ class HomeController: UIViewController {
         
         moviesCollectionView.dataSource = moviesDataSource
         moviesCollectionView.delegate = moviesDelegate
+        moviesDelegate.controller = self
         
         view.addSubview(moviesLabel)
         view.addSubview(moviesCollectionView)
