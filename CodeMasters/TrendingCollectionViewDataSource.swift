@@ -22,7 +22,6 @@ class TrendingCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCell.reuseId, for: indexPath) as! TrendingCell
 
-        print(movieDataStore.data[indexPath.item])
         return cell
     }
 }

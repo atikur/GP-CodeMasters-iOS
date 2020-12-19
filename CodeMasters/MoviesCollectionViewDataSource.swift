@@ -9,20 +9,19 @@ import UIKit
 
 class MoviesCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     
-    let movieDataStore = MovieDataStore.shared
+    var movies = [Movie]()
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieDataStore.data.count
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.reuseId, for: indexPath) as! MovieCell
 
-        print(movieDataStore.data[indexPath.item])
         return cell
     }
 }

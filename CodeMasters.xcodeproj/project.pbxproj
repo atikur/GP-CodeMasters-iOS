@@ -18,6 +18,9 @@
 		24FA45EB258DD77E00F4CA1E /* TrendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA45EA258DD77E00F4CA1E /* TrendingCell.swift */; };
 		24FA45EE258DD7C000F4CA1E /* TrendingCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA45ED258DD7C000F4CA1E /* TrendingCollectionViewDelegate.swift */; };
 		24FA45F1258DD7F700F4CA1E /* TrendingCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA45F0258DD7F700F4CA1E /* TrendingCollectionViewDataSource.swift */; };
+		24FA45F8258DE2C100F4CA1E /* TMDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA45F7258DE2C100F4CA1E /* TMDBClient.swift */; };
+		24FA45FB258DF78D00F4CA1E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA45FA258DF78D00F4CA1E /* Movie.swift */; };
+		24FA45FF258E067500F4CA1E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FA45FE258E067500F4CA1E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		24FA45EA258DD77E00F4CA1E /* TrendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCell.swift; sourceTree = "<group>"; };
 		24FA45ED258DD7C000F4CA1E /* TrendingCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		24FA45F0258DD7F700F4CA1E /* TrendingCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		24FA45F7258DE2C100F4CA1E /* TMDBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBClient.swift; sourceTree = "<group>"; };
+		24FA45FA258DF78D00F4CA1E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		24FA45FE258E067500F4CA1E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,9 @@
 				24FA45E4258DC0B500F4CA1E /* MovieCell.swift */,
 				24FA45EA258DD77E00F4CA1E /* TrendingCell.swift */,
 				24FA45E7258DC1BD00F4CA1E /* MovieDataStore.swift */,
+				24FA45F7258DE2C100F4CA1E /* TMDBClient.swift */,
+				24FA45FE258E067500F4CA1E /* Constants.swift */,
+				24FA45FA258DF78D00F4CA1E /* Movie.swift */,
 				24FA45CB258DBB8600F4CA1E /* Assets.xcassets */,
 				24FA45CD258DBB8600F4CA1E /* LaunchScreen.storyboard */,
 				24FA45D0258DBB8600F4CA1E /* Info.plist */,
@@ -151,7 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FA45F8258DE2C100F4CA1E /* TMDBClient.swift in Sources */,
 				24FA45EB258DD77E00F4CA1E /* TrendingCell.swift in Sources */,
+				24FA45FB258DF78D00F4CA1E /* Movie.swift in Sources */,
 				24FA45E2258DC08200F4CA1E /* MoviesCollectionViewDataSource.swift in Sources */,
 				24FA45DC258DBE9E00F4CA1E /* HomeController.swift in Sources */,
 				24FA45E8258DC1BD00F4CA1E /* MovieDataStore.swift in Sources */,
@@ -160,6 +171,7 @@
 				24FA45E5258DC0B500F4CA1E /* MovieCell.swift in Sources */,
 				24FA45C3258DBB7D00F4CA1E /* AppDelegate.swift in Sources */,
 				24FA45F1258DD7F700F4CA1E /* TrendingCollectionViewDataSource.swift in Sources */,
+				24FA45FF258E067500F4CA1E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

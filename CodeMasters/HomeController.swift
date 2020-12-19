@@ -16,6 +16,15 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        
+        TMDBClient.shared.getPopularMovies { [weak self]
+            movies in
+            guard let movies = movies else { return }
+            self?.moviesDataSource.movies = movies
+            DispatchQueue.main.async {
+                self?.moviesCollectionView.reloadData()
+            }
+        }
     }
     
     // MARK: - Configure UI
