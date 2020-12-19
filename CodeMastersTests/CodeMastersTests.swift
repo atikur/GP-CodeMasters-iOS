@@ -34,4 +34,31 @@ class CodeMastersTests: XCTestCase {
         XCTAssertEqual(returnedUrl, staticUrl)
     }
 
+    func testUrlForTVSeries() {
+        guard let returnedUrl = tmdbClient.getURL(for: TMDBClient.Methods.PopularTVSeries) else {
+            XCTFail("Expected a valid url from the method.")
+            return
+        }
+        
+        guard let staticUrl = URL(string: "https://api.themoviedb.org/3/discover/tv?api_key=\(TMDBClient.Constants.ApiKey)") else {
+            XCTFail("Expected a valid url from static string.")
+            return
+        }
+        
+        XCTAssertEqual(returnedUrl, staticUrl)
+    }
+    
+    func testUrlForTrending() {
+        guard let returnedUrl = tmdbClient.getURL(for: TMDBClient.Methods.Trending) else {
+            XCTFail("Expected a valid url from the method.")
+            return
+        }
+        
+        guard let staticUrl = URL(string: "https://api.themoviedb.org/3/trending/all/week?api_key=\(TMDBClient.Constants.ApiKey)") else {
+            XCTFail("Expected a valid url from static string.")
+            return
+        }
+        
+        XCTAssertEqual(returnedUrl, staticUrl)
+    }
 }
