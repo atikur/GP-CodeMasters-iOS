@@ -8,9 +8,7 @@
 import UIKit
 
 class MoviesCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLayout {
-    
-    let movieDataStore = MovieDataStore.shared
-    
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemHeight = collectionView.frame.height
         return CGSize(width: itemHeight, height: itemHeight)
