@@ -51,15 +51,7 @@ class TrendingCell: UICollectionViewCell {
         releaseYearLabel.text = "Released: \(releaseDate)"
         ratingLabel.text = "Rating: \(rating)"
         
-        downloadImage(filePath: imgPath) { [weak self] (image) in
-            guard let image = image else { return }
-            DispatchQueue.main.async {
-                // make sure we are using correct image for the cell
-                if self?.identifier == imgPath {
-                    self?.imageView.image = image
-                }
-            }
-        }
+        imageView.loadImage(filePath: imgPath, identifier: identifier)
     }
     
     private func setupViews() {
@@ -112,13 +104,4 @@ class TrendingCell: UICollectionViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
-    
-    func downloadImage(filePath: String, completion: @escaping (UIImage?) -> ()) {
-        let urlStr = "https://image.tmdb.org/t/p/w200/\(filePath)"
-        guard let url = URL(string: urlStr) else { return }
-        
-        TMDBClient.shared.performGetRequest(url: url) { (data) in
-            completion(UIImage(data: data))
-        }
-    }
 }

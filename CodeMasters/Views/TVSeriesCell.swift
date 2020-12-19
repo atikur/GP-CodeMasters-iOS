@@ -37,15 +37,7 @@ class TVSeriesCell: UICollectionViewCell {
         releaseYearLabel.text = "Released: \(tvSeries.firstAirDate)"
         ratingLabel.text = "Rating: \(tvSeries.rating)"
         
-        downloadImage(filePath: tvSeries.imagePath) { [weak self] (image) in
-            guard let image = image else { return }
-            DispatchQueue.main.async {
-                if self?.identifier == tvSeries.imagePath {
-                    // make sure we are using correct image for the cell
-                    self?.imageView.image = image
-                }
-            }
-        }
+        imageView.loadImage(filePath: tvSeries.imagePath, identifier: identifier)
     }
     
     private func setupViews() {
@@ -98,13 +90,4 @@ class TVSeriesCell: UICollectionViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
-    
-    func downloadImage(filePath: String, completion: @escaping (UIImage?) -> ()) {
-        let urlStr = "https://image.tmdb.org/t/p/w200/\(filePath)"
-        guard let url = URL(string: urlStr) else { return }
-        
-        TMDBClient.shared.performGetRequest(url: url) { (data) in
-            completion(UIImage(data: data))
-        }
-    }
 }
